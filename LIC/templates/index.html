@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>Insurance</title>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|" rel="stylesheet" type="text/css">
+		<link href=templates/static/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="LIC/static/fonts/lineo-icon/style.css" rel="stylesheet" type="text/css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="LIC/static/style.css">
+
+        <link href="LIC/static/js/bootstrap.min.css" rel="stylesheet">
+        
+              
+        
+        
+<script>
+
+
+</script>
+		
+		
+</head>
+
+
+	<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+
+
+		
+		<div id="site-content">
+			<header class="site-header">
+				<div class="top-header">
+					<div class="container">
+						<a href="/" id="branding">
+							<img src="LIC/static/images/lic_logo2.jpg" alt="Company Name" class="logo">
+							<div class="logo-text">
+								<h1 class="site-title">LIC</h1>
+								<small class="description">LIFE INSURANCE CORPORATION OF INDIA</small>
+							</div>
+						</a> <!-- #branding -->
+					
+						<div class="right-section pull-right">
+							<a href="#" class="phone"><img src="LIC/static/images/icon-phone.png" class="icon">+91-9222492224</a>
+					
+							
+						</div>
+					</div> <!-- .container -->
+				</div> <!-- .top-header -->
+
+				
+				<div class="bottom-header">
+					<div class="container">
+						<div class="main-navigation">
+							<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+							<ul class="menu">
+								<li class="menu-item"><a href="/about">About us</a></li>
+								<li class="menu-item"><a href="/Insurance plans">Insurance plans</a></li>
+							
+								<li class="menu-item"><a href="/Contact">Contact</a></li>
+							</ul> <!-- .menu -->
+						</div> <!-- .main-navigation -->
+						
+						<div class="social-links">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-google-plus"></i></a>
+							<a href="#"><i class="fa fa-pinterest"></i></a>
+
+
+      <button type="button" class="btn btn-default" 
+      data-toggle="modal" data-target="#m1">Signin</button>
+      <button type="button" class="btn btn-default"
+      data-target="#m2" data-toggle="modal">Signup</button>
+                            <button type="button" class="btn btn-default"
+      data-target="#m3" data-toggle="modal">Admin Log-in</button>
+						</div>     
+                        
+						
+				</div>
+				
+                </div></header> <!-- .site-header -->
+            
+            <div class="modal fade" role="dialog" id="m1" >
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header" >
+<a href="#" class="close" data-dismiss="modal" >&times;</a>
+<h3>Please Sign in </h3>
+
+</div>
+
+
+<div class="modal-body">
+
+<form action="/ammount" method="post">
+<input type="text" class="form-control" placeholder="Enter email-id" name="s1"/><br />
+ 
+<input type="password" class="form-control" placeholder="Enter password" name="s2"/><br />
+
+
+<div class="modal-footer" >
+<input type="submit" class="btn btn-success" />
+</div></form>
+</div>
+</div>
+</div></div></div></div>
+
+
+
+<div class="modal fade" role="dialog" id="m2" >
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header" >
+<a href="#" class="close" data-dismiss="modal" >&times;</a>
+<h3>Sign up form</h3>
+
+</div>
+
+
+<div class="modal-body">
+<form  action="/" method="post" >
+<input type="text" class="form-control" placeholder="Enter full name" required  name="t1"/><br />
+Male &nbsp;&nbsp;<input type="radio" name="f" value="Male" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Female&nbsp;&nbsp;<input type="radio" name="f" value="Female" /><br /><br />
+<input type="email" class="form-control" placeholder="Enter e-mail" required name="t2"/><br />
+<input type="tel" class="form-control" placeholder="Mobile" required name="t3"/><br />
+    <input type="password" class="form-control" placeholder="Create password"  required name="t4"/><br />
+
+<label>Enter DOB</label>	
+<input type="date" class="form-control" required name="t5"/><br>
+
+<input type="text" class="form-control" placeholder="PAN No." required name="t6"/><br>
+
+<input type="text" class="form-control" reqired name="t7" >
+
+
+    <label>Policy Start Date</label>
+<input type="date" class="form-control" required name="t8" placeholder="here is your policy start date"/><br>
+<label>Policy Year</label>
+<select class="form-control" required name="t9" >
+<option>select years</option>
+<option>10</option>
+<option>20</option>
+<option>30</option>
+<option>40</option>
+</select><br>
+<select class="form-control" required name="t10" >
+<option>select policy amount</option>
+<option>50000</option>
+<option>100000</option>
+<option>150000</option>
+</select><br>
+<select class="form-control" required name="t11" >
+<option>select premium amount</option>
+<option>2000</option>
+<option>5000</option>
+<option>10000</option>
+    <option>20000</option>
+</select><br>
+
+
+
+
+
+
+
+<div class="modal-footer" >
+<input type="submit" class="btn btn-success" />
+</div></form>
+</div>
+
+</div></div></div>
+
+<div class="modal fade" role="dialog" id="m3" >
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header" >
+<a href="#" class="close" data-dismiss="modal" >&times</a>
+<h3>Please Sign in </h3>
+
+</div>
+
+
+<div class="modal-body">
+
+<form action="/admin" method="post">
+<input type="text" class="form-control" placeholder="Enter email-id" name="s1"/><br />
+
+<input type="password" class="form-control" placeholder="Enter password" name="s2"/><br />
+
+
+<div class="modal-footer" >
+<input type="submit" class="btn btn-success" />
+</div></form>
+</div>
+</div>
+</div></div></div></div>
+
+            
+            
+
+
+			<div class="hero hero-slider">
+				<ul class="slides">
+					<li data-bg-image="static/dummy/logo.png">
+						
+					</li>
+					<li data-bg-image="static/dummy/health.jpg">
+						<div class="container">
+							<div class="slide-content">
+								<h2 class="slide-title">Get your <strong>Health Insurance</strong></h2>
+							
+                            <p>LIC Jeevan Arogya is a non-linked health insurance policy offered by Life Insurance Corporation of India (LIC) to help individuals deal with medical expenses. The plan provides health insurance against certain specified health risks and offers a great financial support during exigencies.<p>
+							</div>
+						</div>
+					</li>
+					<li data-bg-image="static/dummy/life.jpg">
+						<div class="container">
+							<div class="slide-content">
+								<h2 class="slide-title">Get your <strong>Life Insurance</strong></h2>
+								<p>LIC’s life insurance is one of the best selling endowment insurance plan with good returns. It is a limited premium paying, non-linked, with-profits endowment plan which offers a combination of protection and savings.</p>
+							
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div> <!-- .hero-slider -->
+
+			<main class="main-content">
+				<div class="fullwidth-block greet-section">
+					<div class="container">
+						<h2 class="section-title">Welcome to our website</h2>
+						<small class="section-subtitle">"Your welfare is our responsibility"</small>
+
+						<div class="row">
+							<div class="col-md-3">
+								<div class="feature">
+									<i class="icon-phone-24"></i>
+									<h3 class="feature-title">24 hours Service</h3>
+									<p>For any policy related grievance, please feel free to contact our Grievance Redressal Officers at Branch / Division / Zonal / Corporate Level.</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="feature">
+									<i class="icon-hotel"></i>
+									<h3 class="feature-title">Why insurance policy ?</h3>
+									<p>Life insurance is a contract that pledges payment of an amount to the person assured (or his nominee) on the happening of the event insured against.</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="feature">
+									<i class="icon-luggage"></i>
+									<h3 class="feature-title">Why invest ? </h3>
+									<p>Insurance means protection and it’s only role is to cover risk, By mixing insurance with a goal to invest and grow money.</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="feature">
+									<i class="icon-credit-card-hand"></i>
+									<h3 class="feature-title">FAQs</h3>
+									<p>Ask any query ?.</p>
+								</div>
+							</div>
+						</div> <!-- .row -->
+
+						<div class="text-center">
+							
+						</div>
+					</div> <!-- .container -->
+				</div> <!-- .fullwidth-block -->
+
+
+
+
+				<div class="fullwidth-block" data-bg-color="#f1f1f1">
+					<div class="container">
+						<h2 class="section-title">LIC Insurance Policies</h2>
+						
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="offer caption-top">
+									<a href="/health"><img src="LIC/static/dummy/hospital.jpg" alt="offer 1"></a>
+									<div class="caption">
+										<h3 class="offer-title">Health Insurance</h3>
+										
+									</div></div></div>
+                                   <div class="col-md-6">
+								<div class="offer caption-top">
+									<a href="/life"><img src="LIC/static/dummy/family.jpg" alt="offer 1"></a>
+									<div class="caption">
+										<h3 class="offer-title">Life Insurance</h3>
+										
+									</div>
+                                     
+                                    
+								</div>
+							</div>
+                            
+                            
+                            
+							
+						</div> <!-- .row -->
+
+					</div> <!-- .container -->
+				</div> <!-- .offer-section -->
+
+							
+
+				<div class="fullwidth-block" data-bg-color="#0f75bd">
+					<div class="container">
+						<div class="testimonial-slider">
+							<ul class="slides">
+								<li>
+									<blockquote>If there is anyone dependent on your income - parents, children, relatives - you need life insurance.<cite>Suze Orman</cite></blockquote>
+								</li>
+								<li>
+									<blockquote>Fun is like life insurance; the older you get, the more it costs.<cite>Kin Hubbard</cite></blockquote>
+								</li>
+															</ul>
+						</div>
+					</div> <!-- .container -->
+				</div> <!-- .fullwidth-block -->
+
+				<div class="fullwidth-block">
+					<div class="container">
+						<h2 class="section-title">Our Partners</h2>
+
+						<div class="partners">
+							<a href="#"><img src="LIC/static/dummy/axis.png" alt=""></a>
+							<a href="#"><img src="LIC/static/dummy/sbi.jpg" alt=""></a>
+							<a href="#"><img src="LIC/static/dummy/yes.jpg" alt=""></a>
+							<a href="#"><img src="LIC/static/dummy/pm.png" alt=""></a>
+							
+						</div> <!-- .partners -->
+					</div> <!-- .container -->
+				</div> <!-- .fullwidth-block -->
+
+				
+			</main>
+
+			<div class="site-footer">
+				<div class="widget-area">
+					<div class="container">
+						<div class="row">
+                         <div class="col-xs-12 col-sm-4 col-md-2">
+				
+                               </div>
+							<div class="col-xs-12 col-sm-4 col-md-2">
+								<div class="widget">
+									<h3 class="widget-title">Contact</h3>
+									<address> Company Name LIC. Yogakshema Building, Jeevan Bima Marg, P.O. Box No – 19953
+									</address>+91-9222492224</a>
+									<a href="#">info@LICcompany.com</a>
+								</div>
+							</div>
+                           							
+                               <div class="col-xs-12 col-sm-4 col-md-2">
+								<div class="widget">
+									<h3 class="widget-title">Company</h3>
+									<ul class="no-bullet">
+										<li><a href="#">About us</a></li>
+										<li><a href="#">Infoline</a></li>
+										<li><a href="#">Team</a></li>
+										<li><a href="#">Join us</a></li>
+										<li><a href="#">Cooperation</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4 col-md-2">
+								<div class="widget">
+									<h3 class="widget-title">Products</h3>
+									<ul class="no-bullet">
+										<li><a href="#">Life insurance</a></li>
+										<li><a href="#">Home insurance</a></li>
+										<li><a href="#">Car insurance</a></li>
+										<li><a href="#">Business insurance</a></li>
+										<li><a href="#">Investment insurance</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4 col-md-2">
+								<div class="widget">
+									<h3 class="widget-title">Our Solutions</h3>
+									<ul class="no-bullet">
+										<li><a href="#">Presentation</a></li>
+										<li><a href="#">Testimonials</a></li>
+										<li><a href="#">Examples</a></li>
+										<li><a href="#">Our experts</a></li>
+										<li><a href="#">Resources</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4 col-md-2">
+								<div class="widget">
+									<h3 class="widget-title">Press Room</h3>
+									<ul class="no-bullet">
+									<li><a href="#">Advertisement</a></li>
+									<li><a href="#">Interviews</a></li>
+									<li><a href="#">Hot news</a></li>
+									<li><a href="#">Photos</a></li>
+									<li><a href="#">Marketing</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="bottom-footer">
+					<div class="container">
+						<nav class="footer-navigation">
+							<a href="#">Home</a>
+							<a href="#">About us</a>
+							<a href="#">Insurance plans</a>
+							<a href="#">Resources</a>
+							<a href="#">Contact</a>
+						</nav>
+
+						<div class="colophon">Life Insurance Corporation of India. All rights reserved.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="../static/js/jquery-1.11.1.min.js"></script>
+		<script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+		<script src="../static/js/plugins.js"></script>
+		<script src="../static/js/app.js"></script>
+		
+	</body>
+
+</html>

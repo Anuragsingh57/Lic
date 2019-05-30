@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<div class="container">
+  <h2>Detail..</h2>
+ <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Id</th>
+        <th>Policy Number</th>
+        <th>Amount</th>
+            <th>Cerificate</th>
+            <th>Bill</th>
+            <th>Status</th>
+      </tr>
+    </thead>
+ <tbody>
+    {% for row in data %}
+        <tr>
+       <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+            <td><a href="uploads/{{ row[3] }}" download="uploads/{{ row[3] }}"><img src="uploads/{{ row[3] }}" height="100px" width="100px"></a></td>
+        <td><a href="uploads/{{ row[4] }}" download="uploads/{{ row[4] }}"><img src="uploads/{{ row[4] }}" height="100px" width="100px"></a></td>
+
+            {% if row[5]=="Approved" %}
+                <td>{{ row[5] }}</td>
+            {% else %}
+                <td><a href="/edit?id={{ row[0] }}" >{{ row[5] }}</a></td>
+            {% endif %}
+
+
+
+        </tr>
+    {% endfor %}
+ </tbody>
+</table>
+</div>
+</body>
+</html>
